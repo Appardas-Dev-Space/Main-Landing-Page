@@ -56,8 +56,9 @@ export const siteConfig: SiteConfig = {
       platform: "x",
     },
     {
+      /* The current hyperlink points to the Appardas Dev Space GitHub repository */
       label: "Appardas on GitHub",
-      href: "https://github.com/appardas",
+      href: "https://github.com/Appardas-Dev-Space",
       platform: "github",
     },
   ],

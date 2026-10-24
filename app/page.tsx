@@ -1,51 +1,59 @@
+import { AboutUs } from "@/components/sections/AboutUs";
+import { Container } from "@/components/layout/Container";
 import { siteConfig } from "./site.config";
 
 /**
- * Home page placeholder.
+ * Home page.
  *
- * Section layouts are out of scope for LP-02 and land in LP-05 to LP-08. This
- * exists so the shell renders something reviewable and so the token layer can
- * be verified: type scale, colour roles, spacing rhythm, and focus rings.
- *
- * Everything below is built from tokens only. If a value here needs a raw hex
- * or a magic number, the token set is missing something — add it to
- * app/theme.css rather than reaching past the layer.
+ * Renders the intro and the About Us section (LP-05). The remaining
+ * sections live on their own pages: /services (LP-06), /team (LP-07) and
+ * /contact (LP-08) — placeholders are served until content is delivered.
  */
 export default function HomePage() {
   return (
-    <div className="py-section-y md:py-section-y-lg">
-      <div className="mx-auto w-full max-w-prose px-section-x md:px-section-x-lg">
-        <p className="text-sm font-semibold uppercase tracking-wide text-link">
-          SME Digitalization
-        </p>
+    <div className="flex flex-col">
+      {/* Intro */}
+      <section className="py-section-y md:py-section-y-lg">
+        <Container className="max-w-prose">
+          <p className="text-sm font-semibold uppercase tracking-wide text-link">
+            SME Digitalization
+          </p>
 
-        <h1 className="mt-4 text-3xl font-bold md:text-4xl">
-          {siteConfig.tagline}
-        </h1>
+          <h1 className="mt-4 text-3xl font-bold md:text-4xl">
+            {siteConfig.tagline}
+          </h1>
 
-        <p className="mt-4 text-ink-muted">
-          The design token layer and page shell are in place. Sections arrive in
-          LP-05 to LP-08 and are expected to reference these tokens rather than
-          raw values.
-        </p>
+          <p className="mt-4 text-ink-muted">
+            The design token layer, page shell, and sticky navigation (LP-04)
+            are in place. Use the navigation links above to jump to sections and
+            observe the active highlight.
+          </p>
 
-        {/* Focus-ring verification: tab through these and confirm the ring is
-            visible on both the light and inverted surfaces. */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-          <a
-            href="#main"
-            className="focus-ring-inset rounded-md bg-action px-5 py-3 text-sm font-semibold text-action-text shadow-sm transition-colors hover:bg-action-hover"
-          >
-            Primary action
-          </a>
-          <a
-            href="/privacy"
-            className="rounded-md border border-line-strong px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-surface-muted"
-          >
-            Secondary action
-          </a>
-        </div>
-      </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#about"
+              className="rounded-md border border-line-strong px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-surface-muted"
+            >
+              About Us
+            </a>
+            <a
+              href="#contact"
+              className="focus-ring-inset rounded-md bg-action px-5 py-3 text-sm font-semibold text-action-text shadow-sm transition-colors hover:bg-action-hover"
+            >
+              Get in Touch
+            </a>
+            <a
+              href="#services"
+              className="rounded-md border border-line-strong px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-surface-muted"
+            >
+              Explore Services
+            </a>
+          </div>
+        </Container>
+      </section>
+
+      {/* About Section (LP-05) */}
+      <AboutUs />
     </div>
   );
 }

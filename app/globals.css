@@ -25,6 +25,11 @@
     line-height: var(--leading-normal);
     color: var(--color-ink);
     background-color: var(--color-canvas);
+    /* Smooth scrolling for anchor jumps, offset by 5rem (80px) so the sticky
+       header does not obscure section headings. Resets to auto under
+       prefers-reduced-motion below. */
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
